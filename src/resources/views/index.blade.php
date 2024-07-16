@@ -22,7 +22,7 @@
   @endif
 </div>
 <div class="todo__content">
-  <form class="create-form" action="/todos" method="post">
+  <form class="create-form" action="/todos" method="POST">
     @csrf
     <div class="create-form__item">
       <input class="create-form__item-input" type="text" name="content">
@@ -39,9 +39,17 @@
       @foreach($todos as $todo)
       <tr class="todo-table__row">
         <td class="todo-table__item">
-          <form class="update-form">
+          <!-- <form class="update-form" action="/todos/update" method="patch"> -->
+          <form class="update-form" action="/todos/update" method="POST">
+            <!-- formタグのmethod属性にpatchは指定できないからmethodにpostを指定して、 @method('PATCH')でpatchにしてる -->
+            @method('PATCH')
+            @csrf
             <div class="update-form__item">
-              <p class="update-form__item-input">{{ $todo['content'] }}</p>
+              <!-- <p class="update-form__item-input">{{ $todo['content'] }}</p> -->
+              <!-- 固定文言のpタグから、編集可能な入力フォームにするinputタグに変更 -->
+              <input class="update-form__item-input" type="text" name="content" value="{{ $todo['content'] }}">
+              <!-- idを取得し、コントローラに渡す -->
+              <input type="hidden" name="id" value="{{ $todo['id'] }}">
             </div>
             <div class="update-form__button">
               <button class="update-form__button-submit" type="submit">更新</button>
