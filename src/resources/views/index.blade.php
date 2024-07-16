@@ -39,16 +39,11 @@
       @foreach($todos as $todo)
       <tr class="todo-table__row">
         <td class="todo-table__item">
-          <!-- <form class="update-form" action="/todos/update" method="patch"> -->
           <form class="update-form" action="/todos/update" method="POST">
-            <!-- formタグのmethod属性にpatchは指定できないからmethodにpostを指定して、 @method('PATCH')でpatchにしてる -->
             @method('PATCH')
             @csrf
             <div class="update-form__item">
-              <!-- <p class="update-form__item-input">{{ $todo['content'] }}</p> -->
-              <!-- 固定文言のpタグから、編集可能な入力フォームにするinputタグに変更 -->
               <input class="update-form__item-input" type="text" name="content" value="{{ $todo['content'] }}">
-              <!-- idを取得し、コントローラに渡す -->
               <input type="hidden" name="id" value="{{ $todo['id'] }}">
             </div>
             <div class="update-form__button">
@@ -57,8 +52,13 @@
           </form>
         </td>
         <td class="todo-table__item">
-          <form class="delete-form">
+          <!-- <form class="delete-form" action="/todos/delete?id={{$todo->id}}" method="POST"> -->
+          <form class="delete-form" action="/todos/delete" method="POST">
+            @method('DELETE')
+            @csrf
             <div class="delete-form__button">
+              <!-- <button class="delete-form__button-submit" type="submit" name="content" value="{{ $todo['content'] }}">削除</button> -->
+              <input type="hidden" name="id" value="{{ $todo['id'] }}">
               <button class="delete-form__button-submit" type="submit">削除</button>
             </div>
           </form>
