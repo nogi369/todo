@@ -15,7 +15,6 @@ class Todo extends Model
     ];
 
     public function categoriy(){
-      // return $this->belongsTo('App\Models\category');
       return $this->belongsTo(Category::class);
     }
 }
