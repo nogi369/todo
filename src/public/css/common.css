@@ -18,15 +18,8 @@
 
 .header-utilities {
     display: flex;
-    /* justify-content: space-between; */
-    justify-content: space-around;
     align-items: center;
-}
-
-.header-nav {
-}
-
-.header-nav__item {
+    justify-content: space-between;
 }
 
 .header-nav__link {
