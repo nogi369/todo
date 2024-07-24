@@ -6,7 +6,6 @@
 }
 
 .category__alert--danger {
-    margin: 0px;
     padding: 10px 0;
     border-color: #f5c2c7;
     background-color: #f8d7da;
@@ -19,7 +18,7 @@
 
 .category__content {
     margin: 0 auto;
-    padding: 30px 15px;
+    padding: 60px 15px;
     max-width: 1230px;
 }
 
@@ -27,13 +26,11 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    margin-bottom: 15px;
     width: 70%;
     text-align: center;
 }
 
 .create-form__item {
-    display: flex;
     width: 70%;
 }
 
@@ -63,7 +60,7 @@
 .category-table {
     margin: 30px auto;
     width: 70%;
-    text-align: left;
+    text-align: center;
 }
 
 .category-table__inner {
@@ -93,7 +90,7 @@
 }
 
 .update-form__item {
-    width: 40%;
+    width: 80%;
     line-height: 50%;
 }
 
@@ -101,11 +98,6 @@
     width: 100%;
     outline: none;
     border: none;
-}
-
-.update-form__item-p {
-    text-align: left;
-    font-size: 13px;
 }
 
 .update-form__button {
