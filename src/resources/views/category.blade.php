@@ -22,7 +22,7 @@
   @endif
 </div>
 <div class="category__content">
-  <form class="create-form">
+  <form class="create-form" action="/categories" method="post">
     <div class="create-form__item">
       <input class="create-form__item-input" type="text">
     </div>
