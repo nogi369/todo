@@ -23,8 +23,9 @@
 </div>
 <div class="category__content">
   <form class="create-form" action="/categories" method="post">
+    @csrf
     <div class="create-form__item">
-      <input class="create-form__item-input" type="text">
+      <input class="create-form__item-input" type="text" name="name">
     </div>
     <div class="create-form__button">
       <button class="create-form__button-submit" type="submit">作成</button>
